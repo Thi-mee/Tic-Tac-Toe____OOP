@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link stylesheet and Font -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- link js files -->
+    <script defer src="colors.js" type="module"></script>
+    <script defer src="gameLogic.js"></script>
+    <script defer src="options.js"></script>
+    <script defer src="misc.js"></script>
+
+</head>
+
+<body>
+    <button type="button" class="color-btn" id="color-btn">Change Color</button>
+    <div class="container flex-ctn full-page">
+        <div class="flex-item">
+            <h1>Play a game of <br>
+                <span class="accent big-text">TicTacToe</span> <br>
+                <small>against your <span class="accent">Friend</span> or <span class="accent">Computer</span></small>
+            </h1>
+        </div>
+        <div class="flex-item game-area">
+            <div class="screen game-board x">
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div data-cell class="cell"></div>
+                <div class="result-board" id="resb">
+                    <p id="resdisplay"></p>
+                    <button type="button" class="play-again-btn" id="play-again-btn">Play Again</button>
+                </div>
+            </div>
+            <div class="screen options one">
+                <h3 class="options-directive">How would you Like to Play</h3>
+                <div class="options-btns">
+                    <button type="button" class="options-btn" id="against-friend">Against Friend</button>
+                    <button type="button" class="options-btn" id="against-computer">Against Computer</button>
+                </div>
+            </div>
+            <div class="screen options two">
+                <h3 class="options-directive">Select your Icon</h3>
+                <div class="options-btns">
+                    <button type="button" class="options-btn" id="o-icon">O</button>
+                    <button type="button" class="options-btn" id="x-icon">X</button>
+                </div>
+            </div>
+            <div class="screen options three hide">
+                <h3 class="options-directive">Select difficulty</h3>
+                <div class="options-btns">
+                    <button type="button" class="options-btn" id="o-icon">Easy</button>
+                    <button type="button" class="options-btn" id="x-icon">Hard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mover"></div>
+</body>
+
+</html>
