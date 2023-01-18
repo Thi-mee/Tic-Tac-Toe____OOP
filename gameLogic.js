@@ -5,11 +5,11 @@ class Game {
     // Initialize game with game options
     this.gameOptions = gameOptions;
 
-    // Bind certain functions to the game object
-    this.gameFunctions.resetBoard = this.gameFunctions.resetBoard.bind(this);
-    this.gameFunctions.playWithFriend = this.gameFunctions.playWithFriend.bind(this);
-    this.gameFunctions.playWithComputer = this.gameFunctions.playWithComputer.bind(this);
-    this.gameFunctions.checkWin = this.gameFunctions.checkWin.bind(this);
+    // Bind game functions to the game object
+    for (const functionName in this.gameFunctions) {
+      this.gameFunctions[functionName] = this.gameFunctions[functionName].bind(this)
+    }
+    this.xTurn = true;
   }
 
   constants = {
