@@ -11,10 +11,10 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: hsl(74, 100%, 97%);
+    --bg-color: hsl(76, 100%, 97%);
     --neutral-color-0: hsl(17, 0%, 10%);
     --neutral-color-40: hsl(17, 10%, 40%);
-    --accent-color: rgb(46, 33, 123);
+    --accent-color: hsl(249, 58%, 31%);
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
     --neutral-color-20: hsl(17, 0%, 80%);
     --neutral-color-40: hsl(17, 10%, 60%);
     --neutral-color-80: hsl(17, 10%, 20%);
-    --accent-color: rgb(255, 94, 0);
+    --accent-color: hsl(22, 100%, 50%);
   }
 }
 
