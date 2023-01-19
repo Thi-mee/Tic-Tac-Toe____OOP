@@ -25,7 +25,6 @@ class Game {
     resultDisplay: document.getElementById('resdisplay'),
   };
 
-
   start = function () {
     if (this.gameOptions.opponent === 'computer' && this.gameOptions.playerIcon === 'o') {
       console.log('Computer goes first');
@@ -74,7 +73,6 @@ class Game {
       if (this.gameFunctions.gameOver()) {
         return;
       } else {
-        this.xTurn = (this.xTurn) ? false : true;
         this.gameFunctions.toggleHoverClass()
       }
     },
@@ -125,7 +123,6 @@ class Game {
       })
     },
 
-
     minimax: function (currBoardState, depth, currPlayerIcon) {
 
       // console.log(currBoardState)
@@ -170,9 +167,11 @@ class Game {
 
       return moves[bestMove];
     },
+
     emptyIndexies: function (board) {
       return board.filter(s => s !== "o" && s !== "x");
     },
+
     winning: function (board, player) {
       if (
         (board[0] == player && board[1] == player && board[2] == player) ||
@@ -189,6 +188,7 @@ class Game {
         return false;
       }
     },
+
     mapCells: function () {
       return this.constants.boardCells.map((cell, index) => {
         if (this.gameOptions.playerIcon === 'x') {
@@ -210,6 +210,7 @@ class Game {
         }
       })
     },
+
     gameOver: function () {
       if (this.gameFunctions.checkWin()) {
         this.constants.resultDisplay.innerText = `${(this.xTurn) ? 'O' : 'X'} wins this round`;
@@ -223,11 +224,13 @@ class Game {
         return false;
       }
     },
+
     randomMove: function () {
       const emptyCells = this.constants.boardCells.filter(cell => !cell.classList.contains('x') && !cell.classList.contains('o'))
       const randomchoice = emptyCells[Math.floor(Math.random() * emptyCells.length)];
       this.gameFunctions.placeMark(randomchoice);
     },
+
     toggleHoverClass: function () {
       this.constants.gameBoard.classList.toggle('x');
       this.constants.gameBoard.classList.toggle('o');
